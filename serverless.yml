@@ -12,6 +12,7 @@ package:
   exclude:
   - coverage/**
   - .circleci/**
+  - node_modules/**
 
 # The `provider` block defines where your service will be deployed
 provider:

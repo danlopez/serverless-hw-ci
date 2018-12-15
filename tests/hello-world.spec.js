@@ -5,7 +5,7 @@ describe('helloWorld', () => {
     var event = {};
     var context = {};
     var resp = {};
-    
+
     it('should call helloWorld function with success', (done) => {
         var callback = (ctx, data) => {
             console.log(data);
@@ -15,6 +15,7 @@ describe('helloWorld', () => {
         helloWorld(event, context, callback);
         expect(resp.statusCode).toBe(200);
     });
+
 });
 
 const HelloWorld = require('../lib/hello-world');
@@ -26,4 +27,8 @@ describe('sayHello', () => {
     it('should call sayHello and return message', () => {
         expect(hWorld.sayHello(event).message).toBe('Go Serverless v1.0! Your function executed successfully!');
     });
+
+    it('does not return a key for input', () => {
+      expect(hWorld.sayHello(event).input).toBeUndefined();
+    })
 });
